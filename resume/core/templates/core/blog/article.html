@@ -1,4 +1,6 @@
 {% load staticfiles %}
+{% load disqus_tags %}
+
 <!DOCTYPE html>
 <html lang="en" class="no-js one-page-layout" data-classic-layout="false" data-mobile-only-classic-layout="true" data-inAnimation="fadeInUp" data-outAnimation="fadeOutDownBig"><!-- InstanceBegin template="/Templates/layout.dwt" codeOutsideHTMLIsLocked="false" -->
 
@@ -222,7 +224,7 @@
                         
                     </nav>
                     <!-- .nav-single --> 
-
+					{% disqus_show_comments %}
                 </div>
                 <!-- .blog-single --> 
                 

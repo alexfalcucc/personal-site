@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = (
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,6 +45,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     # manipulator images
     'cloudinary',
+    'disqus',
     'django_extensions',
     'devserver',
     'south',
@@ -56,6 +58,11 @@ CLOUDINARY = {
     'api_key': '566357691686394',   # config('CLOUDINARY_API_KEY'),
     'api_secret': '_WHb57oMCxw1_lzwDgf5tBKYFhY'
 }
+
+DISQUS_API_KEY = 'boKSCIOSk2XbaitNXNnf3atiNYsmqssvCEiINoXcTeYhjKt8ZBaOuEEOYxfD9AOB'
+DISQUS_WEBSITE_SHORTNAME = 'alexfalcucci'
+
+SITE_ID = 1
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.cache.UpdateCacheMiddleware',
