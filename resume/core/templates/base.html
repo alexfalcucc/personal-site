@@ -166,6 +166,7 @@
         <script src="{% static 'style-switcher/jquery.cookie.js' %}"></script>
         <script src="{% static 'style-switcher/style.switcher.js' %}"></script>
         
+        {% if user.username == "admin" or user.username == "alexfalcucci" %}
         <div id="skin-select">
             
             <a id="toggle"></a>
@@ -177,10 +178,12 @@
                     <li><a href="{% static 'css/skins/flat.css' %}">Flat</a></li>
                     <li><a href="{% static 'css/skins/overlay.css' %}">Overlay</a></li>
                     <li><a href="{% static 'css/skins/overlay-bold.css' %}">Overlay Bold</a></li>
+                    <li><a href="#">Escrever</a></li>
                 </ul>
             </div>
             
         </div>
+        {% endif %}
         <!--************************** STYLE SWITCHER -->
         
 		

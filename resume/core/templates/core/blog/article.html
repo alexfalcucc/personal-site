@@ -169,13 +169,18 @@
                       <!-- .entry-content -->
                       
                       
-                      
+                      {% if article.get_tags %}
                       <!-- .entry-meta -->
                       <footer class="entry-meta">
                         <h3>TAGS</h3>
-                        <a href="#" rel="tag">design</a> <a href="#" rel="tag">responsive</a> <a href="#" rel="tag">think</a>
+                        {% for tag in article.get_tags %}
+                        <a href="#" rel="tag">{{tag}}</a>
+                        <a href="#" rel="tag">{{tag}}</a>
+                        <a href="#" rel="tag">{{tag}}</a>
+                        {% endfor %}
                       </footer>
                       <!-- .entry-meta -->
+                      {% endif %}
                       
                       
                        
