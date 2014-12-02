@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+				{% include 'core/about/about.html' %}
+
+                {% if a == "a" %}
+                {% include 'core/portfolio/portfolio.html' %}
+                {% endif %}
+
+                {% include 'core/contact/contact.html' %}
+
+                {% include 'core/blog/blog.html' %}
+
+				{% include 'core/resume/resume.html' %}
+
+            	<!-- InstanceEndEditable -->
+{% endblock content %}
