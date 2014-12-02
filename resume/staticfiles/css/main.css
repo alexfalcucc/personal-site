@@ -940,7 +940,7 @@ h2 i[class^="icon-"], h2 i[class*=" icon-"], h2 i.fa {
  		display: inline-block; padding: 0; margin-bottom: -3px;
 		}
 		.social li a {
- 			display: block; float: left; margin: 0 .1em .2em 0; text-align: center; font-size: 22px; font-family: "fontello"; width: 64px; line-height: 60px; color: #516075; border-radius: 4px; border: 1px solid #dde4e6;
+ 			display: block; float: left; margin: 0 .1em .2em 0; text-align: center; font-size: 22px; width: 64px; line-height: 60px; color: #516075; border-radius: 4px; border: 1px solid #dde4e6;
 			}
 		.social li a.facebook:before {
  			content: '\e800'
@@ -1038,10 +1038,10 @@ h2 i[class^="icon-"], h2 i[class*=" icon-"], h2 i.fa {
 		.social li a:hover {
  			color: #fff !important; background-color: #333; border-color: transparent;
 			}
-		.social li a.facebook:hover {
+		.social li a#facebook:hover {
  			background-color: #3c5fac
 			}
-		.social li a.twitter:hover {
+		.social li a#twitter:hover {
  			background-color: #5ec3df
 			}
 		.social li a.flickr:hover {
@@ -1056,25 +1056,25 @@ h2 i[class^="icon-"], h2 i[class*=" icon-"], h2 i.fa {
 		.social li a.lastfm:hover {
  			background-color: #D51007
 			}
-		.social li a.linkedin:hover {
+		.social li a#linkedin:hover {
  			background-color: #2089b5
 			}
 		.social li a.vimeo:hover {
  			background-color: #0dadd6
 			}
-		.social li a.google-plus:hover {
+		.social li a#google-plus:hover {
  			background-color: #c63d2d
 			}
 		.social li a.forrst:hover {
  			background-color: #5b9a68
 			}
-		.social li a.skype:hover {
+		.social li a#skype:hover {
  			background-color: #00aff0
 			}
 		.social li a.picassa:hover {
  			background-color: #ffd34e
 			}
-		.social li a.youtube:hover {
+		.social li a#youtube:hover {
  			background-color: #c8312b
 			}
 		.social li a.pinterest:hover {
@@ -1098,19 +1098,19 @@ h2 i[class^="icon-"], h2 i[class*=" icon-"], h2 i.fa {
 		.social li a.friendfeed:hover {
  			background-color: #2f72c4
 			}
-		.social li a.github:hover {
+		.social li a#github:hover {
  			background-color: #222
 			}
 		.social li a.wordpress:hover {
  			background-color: #0083b3
 			}
-		.social li a.instagram:hover {
+		.social li a#instagram:hover {
  			background-color: #3f729b
 			}
-		.social li a.stack-overflow:hover {
+		.social li a#stack-overflow:hover {
  			background-color: #F90
 			}
-		.social li a.foursquare:hover {
+		.social li a#foursquare:hover {
  			background-color: #009FE0
 			}
 		.social li a.xing:hover {
@@ -1119,7 +1119,7 @@ h2 i[class^="icon-"], h2 i[class*=" icon-"], h2 i.fa {
 		.social li a.weibo:hover {
  			background-color: #E64141
 			}
-		.social li a.soundcloud:hover {
+		.social li a#soundcloud:hover {
  			background-color: #FA3219
 			}
 		.social li a.fivehundredpx:hover {
