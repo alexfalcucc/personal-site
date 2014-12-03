@@ -21,6 +21,12 @@ class Article(models.Model):
     slug = models.SlugField(max_length=255, null=True, blank=True)
     content = models.TextField(max_length=4000)
     picture = CloudinaryField(_(u'foto'), blank=True, null=True)
+    url_download = models.CharField(_(u'download link'), max_length=100,
+                                     blank=True, null=True)
+    url_preview = models.CharField(_(u'preview link'), max_length=100,
+                                     blank=True, null=True)
+    url_github = models.CharField(_(u'github link'), max_length=100,
+                                     blank=True, null=True)
     status = models.TextField(max_length=1, choices=STATUS, default=DRAFT)
     create_user = models.ForeignKey(User)
     create_date = models.DateTimeField(auto_now_add=True)

@@ -16,7 +16,11 @@
                         	<article class="hentry media-cell">
                             	
                                 <div class="media-box">
-                                    <img src="http://res.cloudinary.com/alexfalcucci/image/upload/c_fill,h_350,w_400/{{ article.picture }}.jpg" alt="post-image">
+                                    {% if article.picture %}
+                                    <img src="http://res.cloudinary.com/alexfalcucci/image/upload/c_fill,h_250,w_400/{{ article.picture }}.jpg" alt="post-image">
+                                    {% else %}
+                                    <img src="http://res.cloudinary.com/alexfalcucci/image/upload/c_fill,h_250,w_400/uio9inywxuhrbz9jvyf9.jpg" alt="post-image">
+                                    {% endif %}
                                     <div class="mask"></div>
                                     <a href="blog-single.html"></a>
                                 </div>
