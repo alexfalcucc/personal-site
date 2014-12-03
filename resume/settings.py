@@ -42,8 +42,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+)
+
+PROJECT_APPS = (
     'debug_toolbar',
-    # manipulator images
     'cloudinary',
     'disqus',
     'django_extensions',
@@ -52,6 +54,8 @@ INSTALLED_APPS = (
     'twitter_feed',
     'resume.core',
 )
+
+INSTALLED_APPS += PROJECT_APPS
 
 CLOUDINARY = {
     'cloud_name': 'alexfalcucci',  # config('CLOUDINARY_NAME'),
