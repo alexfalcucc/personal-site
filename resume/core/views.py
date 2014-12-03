@@ -24,7 +24,7 @@ def home(request):
     return render(request, 'core/index.html', {'posts':posts[0:10], 'articles':all_articles[0:10]})
 
 def _articles(request, articles):
-    paginator = Paginator(articles, 10)
+    paginator = Paginator(articles, 2)
     page = request.GET.get('page')
     try:
         articles = paginator.page(page)

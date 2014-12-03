@@ -77,12 +77,11 @@
                 <ul class="vs-nav">
                     
                     <!-- InstanceBeginEditable name="Menu-Content" -->
+
+                    {% block nav_menu %}
                     
-                   	<li><a href="#/about">sobre mim</a></li>
-                    {% if a == "em breve..." %}<li><a href="#/portfolio">portfolio</a></li>{% endif %}
-                    <li><a href="#/contact">contato</a></li>
-                    <li><a href="#/blog">artigos</a></li>
-                    <li><a href="#/resume">resumo</a></li>
+                   	
+                    {% endblock nav_menu %}
                     
                     <!-- InstanceEndEditable -->
                 	
