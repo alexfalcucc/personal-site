@@ -44,4 +44,17 @@ def all_articles(request):
 
 def article(request, slug):
     article = get_object_or_404(Article, slug=slug, status=Article.PUBLISHED)
-    return render(request, 'core/blog/article.html', {'article': article})
+    all_articles = Article.get_published()
+    for i, a in enumerate(all_articles):
+        if a == article:
+            indice_pre = i - 1
+            indice_next = i + 1
+    previous_post = all_articles[indice_pre] if indice_pre >= 0 else None
+    next_post = all_articles[indice_next] if indice_next != len(all_articles) else None
+    context = {
+        'article': article,
+        'articles': all_articles[0:3],
+        'previous_post': previous_post,
+        'next_post': next_post,
+    }
+    return render(request, 'core/blog/article.html', context)

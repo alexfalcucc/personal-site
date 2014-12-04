@@ -17,17 +17,17 @@
                             	
                                 <div class="media-box">
                                     {% if article.picture %}
-                                    <img src="http://res.cloudinary.com/alexfalcucci/image/upload/c_fill,h_250,w_400/{{ article.picture }}.jpg" alt="post-image">
+                                    <img src="http://res.cloudinary.com/alexfalcucci/image/upload/c_fill,h_150,w_300/{{ article.picture }}.jpg" alt="post-image">
                                     {% else %}
                                     <img src="http://res.cloudinary.com/alexfalcucci/image/upload/c_fill,h_250,w_400/uio9inywxuhrbz9jvyf9.jpg" alt="post-image">
                                     {% endif %}
                                     <div class="mask"></div>
-                                    <a href="blog-single.html"></a>
+                                    <a href="{% url 'article' article.slug %}"></a>
                                 </div>
                                 
                                 <header class="media-cell-desc">
                                 	<span title="2013" class="date">{{article.create_date}}</span>
-                                	<h3><a href="blog-single.html">{{article.title}}</a></h3>
+                                	<h3><a href="{% url 'article' article.slug %}">{{article.title}}</a></h3>
                                 </header>
                                 
                             </article>
