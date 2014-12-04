@@ -29,7 +29,7 @@ TEMPLATE_DEBUG = DEBUG
 
 TESTING = 'test' in sys.argv
 
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'alexfalcucci.herokuapp.com', 'alexfalcucci.com', 'www.alexfalcucci.com']
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'alexfalcucci.herokuapp.com', 'alexfalcucci.com', 'www.alexfalcucci.com', '*.alexfalcucci.com']
 
 
 # Application definition
