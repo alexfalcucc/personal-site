@@ -25,7 +25,6 @@ python-twitter==2.0
 pytz==2014.10
 requests==2.4.3
 requests-oauthlib==0.4.2
-simplejson==3.6.5
 six==1.8.0
 sqlparse==0.1.14
 static3==0.5.1
