@@ -185,7 +185,7 @@
 
                     </aside>
                     <!-- .about-author -->
-
+                    {% if previous_post and next_post %}
                     <!-- .nav-single -->
                     <nav class="nav-single row">
                         {% if previous_post %}
@@ -207,7 +207,10 @@
                         {% endif %}
                     </nav>
                     <!-- .nav-single --> 
+                    {% endif %}
+
                     {% disqus_show_comments %}
+
                 </div>
                 <!-- .blog-single --> 
                 
