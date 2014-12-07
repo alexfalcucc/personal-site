@@ -510,13 +510,14 @@ var $container, $blog_container;
 			$('.page').removeClass('active').hide();
 			var path = $.address.path();
 			path = path.slice(1, path.length);
+			console.log(path);
 			path = giveDetailUrl() != -1 ? portfolioKeyword : path;
-			if(path == "") {  // if hash tag doesnt exists - go to first page
-				var firstPage = $('.vs-nav li').first().find('a').attr('href');
-				path = firstPage.slice(2,firstPage.length);
-				$.address.path(path);
-				return false;
-				}
+			// if(path == "") {  // if hash tag doesnt exists - go to first page
+			// 	var firstPage = $('.vs-nav li').first().find('a').attr('href');
+			// 	path = firstPage.slice(2,firstPage.length);
+			// 	$.address.path(path);
+			// 	return false;
+			// 	}
 			
 			// show page
 			$('#'+ path).fadeIn();
@@ -526,7 +527,7 @@ var $container, $blog_container;
 			
 			if(path.indexOf(portfolioKeyword) != -1) {
 				setTimeout(function() { setMasonry(); }, 100);
-			} 
+			}
 			
 			$("body").scrollTop(0);
 
