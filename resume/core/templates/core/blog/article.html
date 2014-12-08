@@ -121,19 +121,22 @@
 
                       <!-- .entry-content -->
                       <div class="entry-content">
+
+
                         {{article.content|safe}}
 
 
                             <!-- .project-action -->
                             <div class="project-action">
+                                <p><i>Você pode conferir o código da aplicação em:</i></p>
                                 {% if article.url_download %}
-                                <a href="{{article.url_download}}" class="button button-icon big blue"><i class="fa fa-cloud-download"></i>DOWNLOAD</a>
+                                <a href="{{article.url_download}}" class="button button-icon big blue" target="_blank"><i class="fa fa-cloud-download"></i>DOWNLOAD</a>
                                 {% endif %}
                                 {% if article.url_preview %}
-                                <a href="{{article.url_preview}}" class="button button-icon big grass"><i class="fa fa-eye"></i>PREVIEW</a>
+                                <a href="{{article.url_preview}}"  target="_blank" class="button button-icon big grass"><i class="fa fa-eye"></i>PREVIEW</a>
                                 {% endif %}
                                 {% if article.url_github %}
-                                <a href="{{article.url_github}}" class="button button-icon big red"><i class="fa fa-github"></i>GITHUB</a>
+                                <a href="{{article.url_github}}" target="_blank" class="button button-icon big red"><i class="fa fa-github"></i>GITHUB</a>
                                 {% endif %}
                             </div>
                             <!-- .project-action -->
