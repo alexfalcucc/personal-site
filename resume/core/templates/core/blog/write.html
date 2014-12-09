@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load cloudinary %}
+
+{% block content %}
+<section id="contact" class="vs-current">
+    <div class="content">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-10">
+                <form enctype="multipart/form-data" action="." method="post" role="form" class="validate-form">
+                {% csrf_token %}
+                {{ form.status }}
+                {% for field in form.visible_fields %}
+                <p>
+                  <label for="{{ field.label }}">{{ field.label }}</label>
+                  {{ field }}
+                  {% if field.label == 'content' %}
+                  {{ field|safe }}
+                  {% endif %}
+                  {% if field.name == 'foto' %}
+                      {{field}}
+                  {% endif %}
+                  {% if field.help_text %}
+                      <br><span class="help-block">{{ field.help_text }}</span>
+                  {% endif %}
+                  {% for error in field.errors %}
+                      <p>{{ error }}</p>
+                    {% endfor %}
+                  {% endfor %}
+                </p>
+                <p>
+                  <input type="submit" value="Salvar">
+                </p>
+                
+              </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

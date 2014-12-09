@@ -154,7 +154,6 @@
         <script src="{% static 'js/google-code-prettify/prettify.js' %}"></script>
         <script src="{% static 'js/twitterFetcher_v10_min.js' %}"></script>
         <script src="{% static 'js/mediaelement/mediaelement-and-player.min.js' %}"></script>
-        <script src="{% static 'js/send-mail.js' %}"></script>
         <script src="{% static 'js/classie.js' %}"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
         <script src="{% static 'js/main.js' %}"></script>
@@ -170,14 +169,14 @@
             
             <a id="toggle"></a>
             
-            <div class="skin-part" data-linkClass="base-skin">
+            <div class="skin-part-remove" data-linkClass="base-skin">
                 <h3>BASE STYLE</h3>
                 <ul>	
                     <li><a href="#" class="active">Default</a></li>
                     <li><a href="{% static 'css/skins/flat.css' %}">Flat</a></li>
                     <li><a href="{% static 'css/skins/overlay.css' %}">Overlay</a></li>
                     <li><a href="{% static 'css/skins/overlay-bold.css' %}">Overlay Bold</a></li>
-                    <li><a href="#">Escrever</a></li>
+                    <li><a href="{% url 'write' %}">Escrever</a></li>
                 </ul>
             </div>
             

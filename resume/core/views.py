@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseForbidden, HttpResponseBadRequest, HttpResponse
 from resume.core.models import Article, Tag
+from resume.core.forms import ArticleForm
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -58,3 +59,29 @@ def article(request, slug):
         'next_post': next_post,
     }
     return render(request, 'core/blog/article.html', context)
+
+def write(request):
+    if request.method == 'POST':
+        form = ArticleForm(request.POST, request.FILES)
+        print request.FILES
+        if form.is_valid():
+            print 'AÇLSDKFJÇALSKJDFAÇLKFDJAÇLFKJASÇD'
+            article = Article()
+            article.create_user = request.user
+            article.title = request.POST['title']
+            article.content = request.POST['content']
+            if request.FILES['picture'] is not None:
+                article.picture = request.FILES['picture']
+            article.url_download = request.POST['url_download']
+            article.url_preview = request.POST['url_preview']
+            article.url_github = request.POST['url_github']
+            status = request.POST['status']
+            if status in [Article.PUBLISHED, Article.DRAFT]:
+                article.status = request.POST['status']
+            article.save()
+            tags = request.POST['tags']
+            article.create_tags(tags)
+            return redirect('/')
+    else:
+        form = ArticleForm()
+    return render(request, 'core/blog/write.html', {'form':form})

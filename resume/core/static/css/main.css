@@ -199,7 +199,7 @@ label {
 input:not([type=submit]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]),
 textarea,
 select {
- 	padding: .8em; width: 262px; max-width: 100%; font-size: 1em; color: #6A7686; border: 2px solid #e9eeee; border-radius: 4px; background: #fff; -webkit-appearance: none; -webkit-tap-highlight-color: transparent; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;
+ 	padding: .8em; width: 100%; max-width: 100%; font-size: 1em; color: #6A7686; border: 2px solid #e9eeee; border-radius: 4px; background: #fff; -webkit-appearance: none; -webkit-tap-highlight-color: transparent; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;
 	}
 input:not([type=submit]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]):focus,
 textarea:focus,
@@ -212,7 +212,7 @@ select {
  	min-width: 262px
 	}
 textarea {
- 	width: 50%; min-width: 262px; min-height: 12em;
+ 	width: 100%; min-width: 262px; min-height: 12em;
 	}
 .inline-label {
  	display: inline-block; margin-right: 2em; font-weight: 400; color: #6A7686; letter-spacing: 0;
