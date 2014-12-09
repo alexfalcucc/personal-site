@@ -232,7 +232,7 @@
         <!--************************** STYLE SWITCHER -->
         <script src="{% static 'style-switcher/jquery.cookie.js' %}"></script>
         <script src="{% static 'style-switcher/style.switcher.js' %}"></script>
-        
+        {% if user.username == "admin" or user.username == "alexfalcucci" %}
         <div id="skin-select">
             
             <a id="toggle"></a>
@@ -248,6 +248,7 @@
             </div>
             
         </div>
+        {% endif %}
         <!--************************** STYLE SWITCHER -->
         
 		
