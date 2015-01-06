@@ -29,7 +29,8 @@ TEMPLATE_DEBUG = DEBUG
 
 TESTING = 'test' in sys.argv
 
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'alexfalcucci.herokuapp.com', 'alexfalcucci.com', 'www.alexfalcucci.com', '*.alexfalcucci.com', '*']
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'alexfalcucci.herokuapp.com',
+                 'alexfalcucci.com', 'www.alexfalcucci.com', '*.alexfalcucci.com', '*']
 
 
 # Application definition
@@ -125,15 +126,15 @@ CACHE_ACTIVE = config('CACHE_ACTIVE', default=False, cast=bool)
 if CACHE_ACTIVE:
     CACHES = {
         'default': {
-                'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
-                'BINARY': True,
-                'LOCATION': config('CACHE_LOCATION'),
-                'OPTIONS': {
-                    'ketama': True,
-                    'tcp_nodelay': True,
-                },
-                'TIMEOUT': config('CACHE_TIMEOUT', default=500, cast=int),
+            'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
+            'BINARY': True,
+            'LOCATION': config('CACHE_LOCATION'),
+            'OPTIONS': {
+                'ketama': True,
+                'tcp_nodelay': True,
             },
+            'TIMEOUT': config('CACHE_TIMEOUT', default=500, cast=int),
+        },
     }
 else:  # Assume development mode
     CACHES = {
@@ -163,12 +164,12 @@ LOGGING = {
         },
     },
     'filters': {
-     'require_debug_true': {
-         '()': 'django.utils.log.RequireDebugTrue',
-         },
-     'skip_on_testing': {
-        '()': 'django.utils.log.CallbackFilter',
-        'callback': skip_on_testing,
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'skip_on_testing': {
+            '()': 'django.utils.log.CallbackFilter',
+            'callback': skip_on_testing,
         },
     },
     'handlers': {

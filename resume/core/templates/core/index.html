@@ -1,25 +1,25 @@
 {% extends 'base.html' %}
 
-				{% block nav_menu %}
-					<li><a href="#/about">sobre mim</a></li>
-                    {% if a == "em breve..." %}<li><a href="#/portfolio">portfolio</a></li>{% endif %}
-                    <li><a href="#/contact">contato</a></li>
-                    <li><a href="#/blog">artigos</a></li>
-                    <li><a href="#/resume">resumo</a></li>
-				{% endblock nav_menu %}
+{% block nav_menu %}
+<li><a href="#/about">sobre mim</a></li>
+{% if a == "em breve..." %}<li><a href="#/portfolio">portfolio</a></li>{% endif %}
+<li><a href="#/contact">contato</a></li>
+<li><a href="#/blog">artigos</a></li>
+<li><a href="#/resume">resumo</a></li>
+{% endblock nav_menu %}
 
 {% block content %}
-				{% include 'core/about/about.html' %}
+{% include 'core/about/about.html' %}
 
-                {% if a == "a" %}
-                {% include 'core/portfolio/portfolio.html' %}
-                {% endif %}
+{% if a == "a" %}
+{% include 'core/portfolio/portfolio.html' %}
+{% endif %}
 
-                {% include 'core/contact/contact.html' %}
+{% include 'core/contact/contact.html' %}
 
-                {% include 'core/blog/blog.html' %}
+{% include 'core/blog/blog.html' %}
 
-				{% include 'core/resume/resume.html' %}
+{% include 'core/resume/resume.html' %}
 
-            	<!-- InstanceEndEditable -->
+<!-- InstanceEndEditable -->
 {% endblock content %}

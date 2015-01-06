@@ -2,56 +2,56 @@
 {% load staticfiles %}
 {% load disqus_tags %}
 
-                    {% block nav_menu %}
-                    <!-- InstanceBeginEditable name="Menu-Content" -->
+{% block nav_menu %}
+<!-- InstanceBeginEditable name="Menu-Content" -->
 
-                        <li><a href="{% url 'all_articles' %}"><i title="visualizar artigos" class="fa fa-reply tooltip" ></i></a></li>
-                        <li><a href="/"><i title="página inicial" class="fa fa-home tooltip" ></i></a></li>
+<li><a href="{% url 'all_articles' %}"><i title="visualizar artigos" class="fa fa-reply tooltip" ></i></a></li>
+<li><a href="/"><i title="página inicial" class="fa fa-home tooltip" ></i></a></li>
 
-                    {% endblock nav_menu %}
+{% endblock nav_menu %}
 
-                {% block content %}
-                <!-- InstanceBeginEditable name="Page-Content" -->
+{% block content %}
+<!-- InstanceBeginEditable name="Page-Content" -->
 
-                <!-- .blog-single -->
-                <div class="readable-content blog-single ">
+<!-- .blog-single -->
+<div class="readable-content blog-single ">
 
-                    <!-- .hentry -->
-                    <article class="post type-post format-standard hentry">
+    <!-- .hentry -->
+    <article class="post type-post format-standard hentry">
 
-                      <!-- .entry-header -->
-                      <header class="entry-header">
-                        <h1 class="entry-title">{{article.title}}</h1>
-                      </header>
-                      <!-- .entry-header -->
+      <!-- .entry-header -->
+      <header class="entry-header">
+        <h1 class="entry-title">{{article.title}}</h1>
+    </header>
+    <!-- .entry-header -->
 
-                      <!-- .entry-meta -->
-                      <div class="entry-meta">
+    <!-- .entry-meta -->
+    <div class="entry-meta">
 
-                            <span class="posted-on">
-                                postado em
-                                <a href="#" title="11:15 pm" rel="bookmark"><time class="entry-date" datetime="2012-11-09T23:15:57+00:00">{{article.create_date}}</time></a>
-                            </span>
+        <span class="posted-on">
+            postado em
+            <a href="#" title="11:15 pm" rel="bookmark"><time class="entry-date" datetime="2012-11-09T23:15:57+00:00">{{article.create_date}}</time></a>
+        </span>
 
-                            <span class="posted-by">
-                                por
-                                <a class="url fn n" href="http://alexfalcucci.com/" title="View all posts by ahmetsali" rel="author">{{article.create_user}}</a>
-                            </span>
+        <span class="posted-by">
+            por
+            <a class="url fn n" href="http://alexfalcucci.com/" title="View all posts by ahmetsali" rel="author">{{article.create_user}}</a>
+        </span>
 
                             <!--<span class="edit-link">
                                 <a class="post-edit-link" href="#" title="Edit Post">Edit</a>
                             </span>-->
 
-                      </div>
-                      <!-- .entry-meta -->
+                        </div>
+                        <!-- .entry-meta -->
 
-                      <!-- .entry-content -->
-                      <div class="entry-content">
-
-
+                        <!-- .entry-content -->
+                        <div class="entry-content">
 
 
-                        {{article.content|safe}}
+
+
+                            {{article.content|safe}}
 
 
                             <!-- .project-action -->
@@ -80,19 +80,19 @@
                             </div>
                             <!-- .related-posts -->
 
-                      </div>
-                      <!-- .entry-content -->
+                        </div>
+                        <!-- .entry-content -->
 
-                      {% if article.get_tags %}
-                      <!-- .entry-meta -->
-                      <footer class="entry-meta">
-                        <h3>TAGS</h3>
-                        {% for tag in article.get_tags %}
-                        <a href="#" rel="tag">{{tag}}</a>
-                        {% endfor %}
-                      </footer>
-                      <!-- .entry-meta -->
-                      {% endif %}
+                        {% if article.get_tags %}
+                        <!-- .entry-meta -->
+                        <footer class="entry-meta">
+                            <h3>TAGS</h3>
+                            {% for tag in article.get_tags %}
+                            <a href="#" rel="tag">{{tag}}</a>
+                            {% endfor %}
+                        </footer>
+                        <!-- .entry-meta -->
+                        {% endif %}
 
                     </article>
                     <!-- .hentry -->
@@ -112,7 +112,7 @@
                             <!-- .author-info -->
 
                         </div>
-                        <!-- .author-bio --> 
+                        <!-- .author-bio -->
 
                     </aside>
                     <!-- .about-author -->
@@ -137,16 +137,14 @@
                         </div>
                         {% endif %}
                     </nav>
-                    <!-- .nav-single --> 
+                    <!-- .nav-single -->
                     {% endif %}
 
                     {% disqus_show_comments %}
 
                 </div>
-                <!-- .blog-single --> 
-                
-                
+                <!-- .blog-single -->
+
                 <!-- InstanceEndEditable -->
-            
-            
+
                 {% endblock content %}

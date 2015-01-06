@@ -1,40 +1,40 @@
 <!-- post nav -->
 <nav class="navigation" role="navigation">
-    {% if paginator.has_previous %}
-    <div class="nav-previous"><a href="?page={{ paginator.previous_page_number }}"><span class="meta-nav">←</span> Older posts</a></div>
-    {% endif %}
-    {% if paginator.has_next %}
-    <div class="nav-next"><a href="?page={{ paginator.next_page_number }}">Newer posts <span class="meta-nav">→</span></a></div>
-    {% endif %}
+  {% if paginator.has_previous %}
+  <div class="nav-previous"><a href="?page={{ paginator.previous_page_number }}"><span class="meta-nav">←</span> Older posts</a></div>
+  {% endif %}
+  {% if paginator.has_next %}
+  <div class="nav-next"><a href="?page={{ paginator.next_page_number }}">Newer posts <span class="meta-nav">→</span></a></div>
+  {% endif %}
 </nav>
 <!-- post nav -->
 
 <nav class="post-pagination">
-    <ul class="pagination">
-      <li class="pagination-first"><a href="?page=1"> Primeira </a></li>
-      {% if articles.has_previous %}
-      <li class="pagination-prev">
-        <a href="?page={{ articles.previous_page_number }}" rel="prev"> « </a>
-      </li>
-      {% else %}
-      <li class="pagination-prev">
-        <a href="?page=" rel="prev" style="color: #999;background-color:#fff;border-color: #ddd;cursor: not-allowed;"> « </a>
-      </li>
-      {% endif %}
-      {% for i in articles.paginator.page_range %}
-      {% if articles.number == i %}
-      <li class="pagination-num current"><a href="#"> {{ i }} </a></li>
-      {% else %}
-      <li class="pagination-num"><a href="?page={{ i }}"> {{ i }} </a></li>
-      {% endif %}
-      {% endfor %}
-      {% if articles.has_next %}
-      <li class="pagination-next"><a href="?page={{ articles.next_page_number }}" rel="next"> » </a></li>
-      {% else %}
-      <li class="pagination-next">
-        <a href="?page=" rel="next" style="color: #999;background-color:#fff;border-color: #ddd;cursor: not-allowed;"> » </a>
-        </li>
-      {% endif %}
-      <li class="pagination-last"><a href="?page={{ articles.paginator.num_pages }}"> Última </a> </li>
-    </ul>
+  <ul class="pagination">
+    <li class="pagination-first"><a href="?page=1"> Primeira </a></li>
+    {% if articles.has_previous %}
+    <li class="pagination-prev">
+      <a href="?page={{ articles.previous_page_number }}" rel="prev"> « </a>
+    </li>
+    {% else %}
+    <li class="pagination-prev">
+      <a href="?page=" rel="prev" style="color: #999;background-color:#fff;border-color: #ddd;cursor: not-allowed;"> « </a>
+    </li>
+    {% endif %}
+    {% for i in articles.paginator.page_range %}
+    {% if articles.number == i %}
+    <li class="pagination-num current"><a href="#"> {{ i }} </a></li>
+    {% else %}
+    <li class="pagination-num"><a href="?page={{ i }}"> {{ i }} </a></li>
+    {% endif %}
+    {% endfor %}
+    {% if articles.has_next %}
+    <li class="pagination-next"><a href="?page={{ articles.next_page_number }}" rel="next"> » </a></li>
+    {% else %}
+    <li class="pagination-next">
+      <a href="?page=" rel="next" style="color: #999;background-color:#fff;border-color: #ddd;cursor: not-allowed;"> » </a>
+    </li>
+    {% endif %}
+    <li class="pagination-last"><a href="?page={{ articles.paginator.num_pages }}"> Última </a> </li>
+  </ul>
 </nav>

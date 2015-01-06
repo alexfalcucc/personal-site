@@ -1,50 +1,45 @@
 {% load staticfiles %}
 <!-- PAGE : BLOG -->
-				<section id="blog" class="page">
-					<div class="content">
-                        <h2 class="section-title center"><span><i class="fa fa-book"></i>ÚLTIMOS ARTIGOS</span></h2>
-						{% if articles %}
-                        <!-- LATEST POSTS -->	
-                        <div class="latest-posts media-grid" data-layout="fitRows">
-                        
-                        	{% for article in articles %}
-                            <!-- post -->
-                        	<article class="hentry media-cell">
-                            	
-                                <div class="media-box">
-                                    {% if article.picture %}
-                                    <img src="http://res.cloudinary.com/alexfalcucci/image/upload/c_fill,h_150,w_300/{{ article.picture }}.jpg" alt="post-image">
-                                    {% else %}
-                                    <img src="http://res.cloudinary.com/alexfalcucci/image/upload/c_fill,h_250,w_400/uio9inywxuhrbz9jvyf9.jpg" alt="post-image">
-                                    {% endif %}
-                                    <div class="mask"></div>
-                                    <a href="{% url 'article' article.slug %}"></a>
-                                </div>
-                                
-                                <header class="media-cell-desc">
-                                	<span title="2013" class="date">{{article.create_date}}</span>
-                                	<h3><a href="{% url 'article' article.slug %}">{{article.title}}</a></h3>
-                                </header>
-                                
-                            </article>
-                            <!-- post -->
-                            {% endfor %}
-                            
-                            
-                            
-                        	
-                        </div>
-                        <!-- LATEST POSTS -->	       
-                             
-                                     
-                        <p class="launch"><a class="button primary" href="{% url 'all_articles' %}">VISUALIZAR TODOS</a></p>
-                        {% else %}
-                        <div class="alert">
-                            <strong>Desculpe:</strong> Não existem artigos publicados.
-                        </div>
-                        {% endif %}
-                               
-						
-					</div>
-				</section>
+<section id="blog" class="page">
+    <div class="content">
+        <h2 class="section-title center"><span><i class="fa fa-book"></i>ÚLTIMOS ARTIGOS</span></h2>
+        {% if articles %}
+        <!-- LATEST POSTS -->
+        <div class="latest-posts media-grid" data-layout="fitRows">
+
+            {% for article in articles %}
+            <!-- post -->
+            <article class="hentry media-cell">
+
+                <div class="media-box">
+                    {% if article.picture %}
+                    <img src="http://res.cloudinary.com/alexfalcucci/image/upload/c_fill,h_150,w_300/{{ article.picture }}.jpg" alt="post-image">
+                    {% else %}
+                    <img src="http://res.cloudinary.com/alexfalcucci/image/upload/c_fill,h_250,w_400/uio9inywxuhrbz9jvyf9.jpg" alt="post-image">
+                    {% endif %}
+                    <div class="mask"></div>
+                    <a href="{% url 'article' article.slug %}"></a>
+                </div>
+
+                <header class="media-cell-desc">
+                    <span title="2013" class="date">{{article.create_date}}</span>
+                    <h3><a href="{% url 'article' article.slug %}">{{article.title}}</a></h3>
+                </header>
+
+            </article>
+            <!-- post -->
+            {% endfor %}
+
+        </div>
+        <!-- LATEST POSTS -->
+        <p class="launch"><a class="button primary" href="{% url 'all_articles' %}">VISUALIZAR TODOS</a></p>
+        {% else %}
+        <div class="alert">
+            <strong>Desculpe:</strong> Não existem artigos publicados.
+        </div>
+        {% endif %}
+
+
+    </div>
+</section>
                 <!-- PAGE : BLOG -->

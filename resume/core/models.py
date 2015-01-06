@@ -9,6 +9,7 @@ import markdown
 
 # Create your models here.
 
+
 class Article(models.Model):
     DRAFT = 'D'
     PUBLISHED = 'P'
@@ -22,16 +23,17 @@ class Article(models.Model):
     content = models.TextField(max_length=4000)
     picture = CloudinaryField(_(u'foto'), blank=True, null=True)
     url_download = models.CharField(_(u'download link'), max_length=100,
-                                     blank=True, null=True)
+                                    blank=True, null=True)
     url_preview = models.CharField(_(u'preview link'), max_length=100,
-                                     blank=True, null=True)
+                                   blank=True, null=True)
     url_github = models.CharField(_(u'github link'), max_length=100,
-                                     blank=True, null=True)
+                                  blank=True, null=True)
     status = models.TextField(max_length=1, choices=STATUS, default=DRAFT)
     create_user = models.ForeignKey(User)
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(blank=True, null=True)
-    update_user = models.ForeignKey(User, null=True, blank=True, related_name="+")
+    update_user = models.ForeignKey(
+        User, null=True, blank=True, related_name="+")
 
     class Meta:
         verbose_name = _("Artigo")
@@ -64,7 +66,8 @@ class Article(models.Model):
         tag_list = tags.split(' ')
         for tag in tag_list:
             if tag:
-                t, created = Tag.objects.get_or_create(tag=tag.lower(), article=self)
+                t, created = Tag.objects.get_or_create(
+                    tag=tag.lower(), article=self)
 
     def get_tags(self):
         return Tag.objects.filter(article=self)
@@ -78,6 +81,7 @@ class Article(models.Model):
     def get_summary_as_markdown(self):
         return markdown.markdown(self.get_summary(), safe_mode="escape")
 
+
 class Tag(models.Model):
     tag = models.CharField(max_length=50)
     article = models.ForeignKey(Article)
@@ -86,7 +90,7 @@ class Tag(models.Model):
         verbose_name = _('Tag')
         verbose_name_plural = _('Tags')
         unique_together = (('tag', 'article'),)
-        index_together = [['tag', 'article'],]
+        index_together = [['tag', 'article'], ]
 
     def __unicode__(self):
         return self.tag

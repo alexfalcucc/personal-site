@@ -1,61 +1,61 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-                    {% block nav_menu %}
-                    <!-- InstanceBeginEditable name="Menu-Content" -->
-                    
-                    	<li><a href="/"><i title="Página inicial" class="fa fa-home tooltip" data-tooltip-pos="left"></i></a></li>
-                        <li><a><i title="buscar" class="search-link fa fa-search tooltip" data-tooltip-pos="right"></i></a></li>
-                                              
-                    <!-- InstanceEndEditable -->
-                	{% endblock nav_menu %}
+{% block nav_menu %}
+<!-- InstanceBeginEditable name="Menu-Content" -->
 
-                {% block content %}
-				<!-- InstanceBeginEditable name="Page-Content" -->
-                
-                
-                <!-- .blog-posts -->
-                <div class="blog-posts readable-content">
-					
+<li><a href="/"><i title="Página inicial" class="fa fa-home tooltip" data-tooltip-pos="left"></i></a></li>
+<li><a><i title="buscar" class="search-link fa fa-search tooltip" data-tooltip-pos="right"></i></a></li>
 
-					{% for article in articles %}
-                    <!-- .post -->
-                    <article class="post type-post hentry">
-                        
-                        
-                        <!-- .entry-meta --> 
-                        <footer class="entry-meta">
-                            <span class="post-format"></span>
-                            <span title="2013" class="entry-date">{{article.create_date}}</span>
-                        </footer>
-                        <!-- .entry-meta -->  
-                        
-                        
-                        <!-- .entry-header -->
-                        <header class="entry-header">
-                            <h1 class="entry-title">
-                                <a href="{% url 'article' article.slug %}" rel="bookmark">{{article.title}}</a>
-                            </h1>
-                        </header>
-                        <!-- .entry-header -->
+<!-- InstanceEndEditable -->
+{% endblock nav_menu %}
+
+{% block content %}
+<!-- InstanceBeginEditable name="Page-Content" -->
 
 
-                        <!-- .entry-content -->     
-                        <div class="entry-content">
-                            <p>{{article.content|safe|truncatewords:50}}
-                            <a href="{% url 'article' article.slug %}" class="more-link">Continuar lendo <span class="meta-nav">→</span></a></p>
-                        </div>
-                        <!-- .entry-content -->
-                        
-                        
-                    </article>
-                    <!-- .post -->	
-                    {% endfor %}
+<!-- .blog-posts -->
+<div class="blog-posts readable-content">
 
-                   {% include 'paginator.html' %}
-                    
-                    
-                    
-                    <!-- post pagination 
+
+    {% for article in articles %}
+    <!-- .post -->
+    <article class="post type-post hentry">
+
+
+        <!-- .entry-meta -->
+        <footer class="entry-meta">
+            <span class="post-format"></span>
+            <span title="2013" class="entry-date">{{article.create_date}}</span>
+        </footer>
+        <!-- .entry-meta -->
+
+
+        <!-- .entry-header -->
+        <header class="entry-header">
+            <h1 class="entry-title">
+                <a href="{% url 'article' article.slug %}" rel="bookmark">{{article.title}}</a>
+            </h1>
+        </header>
+        <!-- .entry-header -->
+
+
+        <!-- .entry-content -->
+        <div class="entry-content">
+            <p>{{article.content|safe|truncatewords:50}}
+                <a href="{% url 'article' article.slug %}" class="more-link">Continuar lendo <span class="meta-nav">→</span></a></p>
+            </div>
+            <!-- .entry-content -->
+
+
+        </article>
+        <!-- .post -->
+        {% endfor %}
+
+        {% include 'paginator.html' %}
+
+
+
+                    <!-- post pagination
                     <nav class="post-pagination">
                         <ul class="pagination">
                           <li class="pagination-first"><a href="#"> First </a></li>
@@ -67,15 +67,12 @@
                           <li class="pagination-last"><a href="#"> Last </a> </li>
                         </ul>
                     </nav>
-                     post pagination -->
-                    
-                    
-                
+                    post pagination -->
+
+
                 </div>
                 <!-- .blog-posts -->
-                
-                
+
                 <!-- InstanceEndEditable -->
-            
-            
+
                 {% endblock content %}
