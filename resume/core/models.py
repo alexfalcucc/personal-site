@@ -107,3 +107,13 @@ class Tag(models.Model):
                     count[tag.tag] = 1
         sorted_count = sorted(count.items(), key=lambda t: t[1], reverse=True)
         return sorted_count[:20]
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=300, null=True, blank=True)
+    email = models.EmailField()
+    message = models.TextField(max_length=500, verbose_name='Mensagem')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return "Mensagem para " + str(self.email)

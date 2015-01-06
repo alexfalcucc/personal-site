@@ -33,26 +33,18 @@
         <!-- .contact-form -->
         <div class="contact-form">
 
-          <form id="contact-form" action="send-mail.php" method="post">
-
+          <form id="contact-form" action="{% url 'contact' %}" method="post">
+            {% csrf_token %}
             <!-- enter mail subject here -->
             <input type="hidden" name="subject" id="subject" value="You have a new message from cvCard!">
 
             <p>
-              <label for="name">NOME</label>
-              <input type="text" name="name" id="name" class="required">
-            </p>
-
+              {{form.name}}
             <p>
-              <label for="email">EMAIL</label>
-              <input type="text" name="email" id="email" class="required email">
+              {{form.email}}
             </p>
-
-
-            <p>
-              <label for="message">MENSAGEM</label>
-              <textarea name="message" id="message" class="required"></textarea>
-            </p>
+              {{form.message}}
+            <br>
 
             <p>
               <input type="submit" class="submit button primary" value="ENVIAR">

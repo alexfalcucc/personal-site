@@ -22,6 +22,12 @@ BASE_DIR = Path(__file__).parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
@@ -30,7 +36,8 @@ TEMPLATE_DEBUG = DEBUG
 TESTING = 'test' in sys.argv
 
 ALLOWED_HOSTS = ['.localhost', '127.0.0.1', 'alexfalcucci.herokuapp.com',
-                 'alexfalcucci.com', 'www.alexfalcucci.com', '*.alexfalcucci.com', '*']
+                 'alexfalcucci.com', 'www.alexfalcucci.com',
+                 '*.alexfalcucci.com', '*']
 
 
 # Application definition

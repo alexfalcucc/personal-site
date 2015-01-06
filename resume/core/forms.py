@@ -1,6 +1,6 @@
 # coding: utf-8
 from django import forms
-from resume.core.models import Article
+from resume.core.models import Article, Contact
 
 
 class ArticleForm(forms.ModelForm):
@@ -32,3 +32,21 @@ class ArticleForm(forms.ModelForm):
         model = Article
         fields = ['title', 'content', 'picture', 'tags',
                   'url_download', 'url_preview', 'url_github', 'status']
+
+
+class ContactForm(forms.ModelForm):
+    name = forms.CharField(widget=forms.TextInput(
+        attrs={'placeholder': 'Nome', 'required': 'required'}), max_length=100)
+
+    email = forms.CharField(widget=forms.EmailInput(
+        attrs={
+            'placeholder': 'Email', 'required': 'required'}), max_length=100)
+
+    message = forms.CharField(widget=forms.Textarea(
+        attrs={
+            'placeholder': 'Mensagem', 'rows': '3', 'required': 'required'}),
+        max_length=100)
+
+    class Meta:
+        model = Contact
+        fields = ['name', 'email', 'message']

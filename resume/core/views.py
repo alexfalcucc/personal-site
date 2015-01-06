@@ -1,10 +1,15 @@
 # coding: utf-8
 from django.shortcuts import render, redirect, get_object_or_404
+from django.template.loader import render_to_string
+from django.core.mail import EmailMultiAlternatives
 from resume.core.models import Article, Tag
-from resume.core.forms import ArticleForm
+from resume.core.forms import ArticleForm, ContactForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from decouple import config
 import twitter
+from django.conf import settings
+from django.template import Context
+from django.http import HttpResponse
 
 
 def home(request):
@@ -18,7 +23,9 @@ def home(request):
     all_articles = Article.get_published()
 
     return render(request, 'core/index.html', {'posts': posts[0:10],
-                                               'articles': all_articles[0:10]})
+                                               'articles': all_articles[0:10],
+                                               'form': ContactForm(request.POST
+                                                                   or None)})
 
 
 def _articles(request, articles):
@@ -86,3 +93,28 @@ def write(request):
     else:
         form = ArticleForm()
     return render(request, 'core/blog/write.html', {'form': form})
+
+
+def contact(request):
+    form = ContactForm(request.POST or None)
+    if form.is_valid() and request.is_ajax():
+        save_it = form.save(commit=False)
+        save_it.save()
+        subject = 'Hello my friend {username}, do you called me? =)'.format(
+            username=save_it.name)
+        from_email = settings.EMAIL_HOST_USER
+        to = save_it.email
+        text_content = 'Olá {username}, do you called me?'.format(
+            username=save_it.name)
+        c = Context({
+            'user': save_it.name, 'github': 'https://github.com/alexfalcucc',
+            'linkedin': 'https://www.linkedin.com/in/alexfalcucci'
+        })
+        html_content = render_to_string(
+            'core/emails/welcome.html', c
+        )
+        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+        return HttpResponse("success")
+    return render(request, 'core/index.html', {'form': form})
