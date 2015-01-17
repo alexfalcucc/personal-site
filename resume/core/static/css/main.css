@@ -413,6 +413,9 @@ a.more-link,
         }
     .header img {
     max-height: 180px; border-top-left-radius: 15%; border-bottom-right-radius: 20%;
+    -webkit-animation: bounceIn 0.6s;
+    -webkit-transform: rotate(0deg) scale(1) translateZ(0);-webkit-transition: all 0.4s cubic-bezier(.8,1.8,.75,.75);
+      cursor: pointer;
         }
     .header p {
     font-size: 1em; margin: .1em 0 .6em; display: inline-block; font-style: italic; padding: 6px 10px; background: #D59C00; color: #345; color: rgba(0,0,0,.7); border-radius: 4px; line-height: 1;
