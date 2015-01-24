@@ -29,5 +29,3 @@ six==1.8.0
 sqlparse==0.1.14
 static3==0.5.1
 wsgiref==0.1.2
-pygraphviz==1.2
-graphviz==0.4.2
