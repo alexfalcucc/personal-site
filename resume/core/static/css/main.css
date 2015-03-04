@@ -599,7 +599,7 @@ a.more-link,
     display: none;
     }
 .vs-sidenav div {
-    position: fixed; top: 0; z-index: 500; width: 10%; height: 100%; cursor: pointer;
+    position: fixed; top: 0; z-index: 500; width: 6%; height: 100%; cursor: pointer;
     }
 .vs-sidenav .vs-sidenav-left {
     left: 0px
