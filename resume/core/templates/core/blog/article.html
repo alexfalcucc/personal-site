@@ -48,16 +48,18 @@
                         <!-- .entry-content -->
                         <div class="entry-content">
 
+<div class="entry-content">
+
 
 
 
                             {{article.content|safe}}
 
-
+                            {% if article.url_download or article.url_preview or article.url_github %}
                             <!-- .project-action -->
                             <div class="project-action">
-                                <p><i>Você pode conferir o código da aplicação em:</i></p>
                                 {% if article.url_download %}
+                                <p><i>Você pode conferir o código da aplicação em:</i></p>
                                 <a href="{{article.url_download}}" class="button button-icon big blue" target="_blank"><i class="fa fa-cloud-download"></i>DOWNLOAD</a>
                                 {% endif %}
                                 {% if article.url_preview %}
@@ -68,6 +70,7 @@
                                 {% endif %}
                             </div>
                             <!-- .project-action -->
+                            {% endif %}
 
                             <!-- .related-posts -->
                             <div class="related-posts">

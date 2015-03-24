@@ -152,6 +152,7 @@
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
         <script src="{% static 'js/main.js' %}"></script>
         <script src="{% static 'js/send-mail.js' %}"></script>
+        <script src="http://twemoji.maxcdn.com/twemoji.min.js"></script>
 
         <!--************************** STYLE SWITCHER -->
         <script src="{% static 'style-switcher/jquery.cookie.js' %}"></script>
@@ -165,6 +166,9 @@
           ga('create', 'UA-58260549-1', 'auto');
           ga('send', 'pageview');
 
+      </script>
+      <script>
+      twemoji.parse(document.body, { size: 16 });
       </script>
       {% if user.username == "admin" or user.username == "alexfalcucci" %}
       <div id="skin-select">
