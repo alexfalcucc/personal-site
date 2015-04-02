@@ -161,11 +161,13 @@ tr:nth-child(odd) td {
 /* code and pre  */
 code,
 pre {
-    padding: 0 3px 2px; margin-bottom: 4em; font-family: Monaco, Menlo, Consolas, "Courier New", monospace; font-size: 12px; color: #333333; white-space: pre; overflow: auto;
-    }
+    font-size: 12px; color: #333333; white-space: pre; overflow: auto;
+}
 code {
-    display: inline-block; margin: 0 .4em; padding: 1px 6px; background: #fff; border: 1px solid #DDE4E6; box-shadow: 1px 1px 0 #fff, 2px 2px 0 #DDE4E6;
-    }
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 5px; display: inline-block; margin: 0 .4em; padding: 1px 6px; background: #fff; border: 1px solid #DDE4E6; box-shadow: 10px 10px 5px #888888;
+}
 /* lists  */
 ol,
 ul {

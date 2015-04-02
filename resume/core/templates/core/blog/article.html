@@ -48,64 +48,6 @@
                         <!-- .entry-content -->
                         <div class="entry-content">
 
-<div class="entry-content">
-<h2>Hero o quê? 😐</h2>
-                           <img src="http://i.picresize.com/images/2015/03/24/aG2rR.png" alt="Image" class="alignright">
-                            <p><div class="tagline" style="text-align: justify;"> <a href="">Heroku </a>é uma ótima plataforma para hospedar seus projetos, possui muitos add-ons úteis e sua configuração é relativamente fácil. Neste blogpost irei lhe mostrar o procedimento passo a passo para configuração e deploy de uma simples aplicação em Django, integrando Heroku e Github.</div></p>
-                            
-                            <h3>Ambiente de desenvolvimento</h3>
-                            <h4><i>Heroku Toolbelt</i></h4>
-                            <p>Considerando que você já tenha se cadastrado no heroku e criado uma app, você precisará da ferramenta <a href="" title="">Heroku Toolbelt</a> para interagir com sua app via <i>command line</i>.</p>
-
-                            <h4><i>Git</i></h4>
-                            <p>O Heroku utiliza o <a href="" title="">Git</a> para realizar o deploy de suas apps e controle de versionamento. Instale-o!</p>
-
-                            <h4><i>Python & Virtual-Env</i></h4>
-                            <p>Se esta não é a sua primeira aplicação em Python, provavelmente estará tudo configurado. Caso contrário, siga <a href="http://www.saltycrane.com/blog/2010/02/how-install-pip-ubuntu/" title="">este</a> tutorial.
-
-                            <p>Considerando que a configuração esteja bem sucedida, crie e ative sua máquina virtual:
-                            <script src="http://pastebin.com/embed_js.php?i=jCAgJEXE"></script></p>
-                            </p>
-                            <h3>Criando a aplicação</h3>
-                            <p>Recomendo a darmos nosso passo inicial com um kickstart customizado disponível no meu <a href="" title=""> github</a>. Existem vários outros pacotes de inicialização Django, este por exemplo foi customizado à partir <a href="" title="">desse</a> kickstart.</p>
-                            <p>Instale o Django com:</p>
-                            <script src="http://pastebin.com/embed_js.php?i=CAcgV2wW"></script>
-
-                            <p>A seguir, crie o projeto, adicione as variáveis e instale as dependências:</p>
-                            <script src="http://pastebin.com/embed_js.php?i=RG3Z6rCk"></script>
-                            <p>Adicione as variáveis no arquivo <code>.env</code>:</p>
-                            <script src="http://pastebin.com/embed_js.php?i=h7igyYa4"></script>
-                            <p>Instale as dependências em sua máquina virtual:</p>
-                            <script src="http://pastebin.com/embed_js.php?i=x4hktGXT"></script>
-
-                            <p>Num futuro próximo explicarei melhor em outro blogspot as configurações inclusas nesse kickstart de inicialização Django direcionada para o deploy no Heroku.</p>
-
-                            <p>Inicie o repositório git:</p>
-                            <script src="http://pastebin.com/embed_js.php?i=9rLMRdPm"></script>
-
-                            <p>Inclua os arquivos em seu repositório git e dê um commit:</p>
-                            <script src="http://pastebin.com/embed_js.php?i=aYucZe5U"></script>
-                            <p>Setando as variáveis do projeto:</p>
-                            <script src="http://pastebin.com/embed_js.php?i=tZhCGSdx"></script>
-
-                            <p>Enfim, <i>push</i> para o Heroku!</p>
-                            <script src="http://pastebin.com/embed_js.php?i=z1HRkFPd"></script>
-
-                            <p>Inclua suas variáveis do arquivo <i>.env</i> no Heroku com:</p>
-                            <script src="http://pastebin.com/embed_js.php?i=wERjcjyH"></script>
-
-                            <p>Caso haja algum problema ao setar as variáveis, você pode setar uma por uma no Heroku dashboard de sua
-                            aplicação ou via <i>command line</i> com:</p>
-                            <script src="http://pastebin.com/embed_js.php?i=ShqCyEXq"></script>
-                            <small>Veja mais na própria <a href="https://devcenter.heroku.com/articles/config-vars" title="">documentação.</a></small>
-                            <p>Setemos agora o <code>DEBUG=False</code>. Sempre em produção devemos usar a variável DEBUG como False para servir arquivos estáticos e desativar funções internas do Django como por exemplo salvar todas as consultas feitas na memória, etc. Em outras palavras você diz ao Django que todos usuários/devs que utilizarem o sistema são confiáveis, desativando seus recursos.</p>
-                            <script src="http://pastebin.com/embed_js.php?i=DvsACRSk"></script>
-                            <small>Você pode ler mais sobre isso <a href="http://www.djangobook.com/en/2.0/chapter12.html" title="">aqui.</a></small>
-                            <p>That's it! 😃 Abra o domínio gerado pelo Heroku com <code>heroku open</code> e...</p>
-                            <p align="center"><strong>See you!</strong></p>
-
-
-
 
                             {{article.content|safe}}
 
