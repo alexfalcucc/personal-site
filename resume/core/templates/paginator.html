@@ -4,14 +4,14 @@
   <div class="nav-previous"><a href="?page={{ paginator.previous_page_number }}"><span class="meta-nav">←</span> Older posts</a></div>
   {% endif %}
   {% if paginator.has_next %}
-  <div class="nav-next"><a href="?page={{ paginator.next_page_number }}">Newer posts <span class="meta-nav">→</span></a></div>
+  <div class="nav-next"><a href="?page={{ paginator.next_page_number }}">New posts <span class="meta-nav">→</span></a></div>
   {% endif %}
 </nav>
 <!-- post nav -->
 
 <nav class="post-pagination">
   <ul class="pagination">
-    <li class="pagination-first"><a href="?page=1"> Primeira </a></li>
+    <li class="pagination-first"><a href="?page=1"> First </a></li>
     {% if articles.has_previous %}
     <li class="pagination-prev">
       <a href="?page={{ articles.previous_page_number }}" rel="prev"> « </a>
@@ -35,6 +35,6 @@
       <a href="?page=" rel="next" style="color: #999;background-color:#fff;border-color: #ddd;cursor: not-allowed;"> » </a>
     </li>
     {% endif %}
-    <li class="pagination-last"><a href="?page={{ articles.paginator.num_pages }}"> Última </a> </li>
+    <li class="pagination-last"><a href="?page={{ articles.paginator.num_pages }}"> Last </a> </li>
   </ul>
 </nav>

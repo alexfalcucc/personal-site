@@ -9,7 +9,7 @@
       <!-- column 6/12 -->
       <div class="col-md-6">
 
-        <h2 class="section-title"><span><i class="fa fa-user"></i>PEGUE MEUS CONTATOS</span></h2>
+        <h2 class="section-title"><span><i class="fa fa-user"></i>MY INFO</span></h2>
 
         <!-- LETTER -->
         <div class="letter">
@@ -27,7 +27,7 @@
 
 
 
-        <h2 class="section-title"><span><i class="fa fa-paper-plane-o"></i>DEIXE SUA MENSAGEM</span></h2>
+        <h2 class="section-title"><span><i class="fa fa-paper-plane-o"></i>LEAVE A TOUCH</span></h2>
 
 
         <!-- .contact-form -->
@@ -36,7 +36,7 @@
           <form id="contact-form" action="{% url 'contact' %}" method="post">
             {% csrf_token %}
             <!-- enter mail subject here -->
-            <input type="hidden" name="subject" id="subject" value="You have a new message from cvCard!">
+            <input type="hidden" name="subject" id="subject" value="">
 
             <p>
               {{form.name}}
@@ -47,7 +47,7 @@
             <br>
 
             <p>
-              <input type="submit" class="submit button primary" value="ENVIAR">
+              <input type="submit" class="submit button primary" value="SEND">
             </p>
 
           </form>
@@ -63,7 +63,7 @@
       <div class="col-md-6">
 
 
-        <h2 class="section-title"><span><i class="fa fa-paw"></i>SIGA-ME</span></h2>
+        <h2 class="section-title"><span><i class="fa fa-paw"></i>FOLLOW ME ON</span></h2>
 
         <!-- SOCIAL -->
         <ul class="social">
@@ -74,7 +74,6 @@
           <li><a class="fa fa-twitter" id="twitter" target="_blank" href="https://twitter.com/AlexFalcucci"></a></li>
           <li><a class="fa fa-google-plus" id="google-plus" target="_blank" href="http://plus.google.com/u/0/+AlexsanderFalcucciElixir/posts"></a></li>
           <li><a class="fa fa-instagram" id="instagram" target="_blank" href="http://instagram.com/alexfalcucci/"></a></li>
-          <li><a class="fa fa-foursquare" id="foursquare" target="_blank" href="https://pt.foursquare.com/user/84837930"></a></li>
           <!--<li><a class="fa fa-soundcloud" id="soundcloud" href="#"></a></li>-->
                                     <!--<li><a class="deviantart" href="#"></a></li>
                                     <li><a class="soundcloud" href="#"></a></li>
@@ -82,7 +81,7 @@
                                     <li><a class="slideshare" href="#"></a></li>-->
                                   </ul>
                                   <!-- SOCIAL -->
-                                  <h2 class="section-title"><span><i class="fa fa-map-marker"></i>LOCALIZAÇÃO</span></h2>
+                                  <h2 class="section-title"><span><i class="fa fa-map-marker"></i>LOCATION</span></h2>
                                   <!-- GOOGLE MAP -->
                                   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1868.0584084862794!2d-47.37724624907324!3d-20.542400738008002!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b0a8a9a6733c17%3A0xa7c8415bd44a4c2c!2sAv.+Santa+Cruz%2C+3255+-+Vila+Santa+Cruz%2C+Franca+-+SP!5e0!3m2!1spt-BR!2sbr!4v1417582155992" width="600" height="450" frameborder="0" style="border:0"></iframe>
                                   <!-- GOOGLE MAP -->
